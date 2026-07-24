@@ -225,8 +225,17 @@ p { color: var(--text-secondary); font-weight: 300; }
 }
 
 .sign-off { font-size: 1rem; margin-bottom: 0.5rem; }
-.signature { font-size: clamp(2rem, 6vw, 3rem); font-style: italic; margin-bottom: 4rem; color: var(--text-primary); }
-.end-note { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); }
+.signature { font-size: clamp(2.5rem, 6vw, 3.5rem); font-style: italic; margin-bottom: 2rem; color: var(--text-primary); }
+
+/* The Luxury Vertical Anchor Line */
+.ending-ornament {
+    width: 1px;
+    height: 40px;
+    background-color: var(--accent-color);
+    margin: 0 auto 2rem auto;
+}
+
+.end-note { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); }
 
 /* ========================================
    ANIMATIONS
