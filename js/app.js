@@ -5,12 +5,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Remove 'no-js' class to enable JS-specific styling if needed
+    // 1. Remove 'no-js' class to enable JS-specific styling
     document.documentElement.classList.remove('no-js');
 
     // 2. Setup Intersection Observer for scroll animations
     const setupScrollAnimations = () => {
-        // Check if user prefers reduced motion
+        // Check if user prefers reduced motion for accessibility
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // Select all elements that need to animate in
