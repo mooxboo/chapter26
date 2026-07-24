@@ -74,7 +74,10 @@ p { color: var(--text-secondary); font-weight: 300; }
 }
 .hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
 .hero-subtitle { font-family: var(--font-heading); font-size: clamp(1.2rem, 4vw, 1.75rem); font-style: italic; color: var(--text-secondary); margin-bottom: 2rem; }
-.hero-recipient { font-size: 0.875rem; letter-spacing: 0.05em; color: var(--accent-color); text-transform: uppercase; }
+
+/* ALL CAPS REMOVED HERE */
+.hero-recipient { font-size: 0.875rem; letter-spacing: 0.05em; color: var(--accent-color); }
+
 .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); height: 60px; width: 1px; overflow: hidden; }
 .scroll-line { width: 100%; height: 100%; background-color: var(--text-secondary); animation: scrollDown 2s var(--ease-out-expo) infinite; transform-origin: top; }
 @keyframes scrollDown { 0% { transform: scaleY(0); opacity: 0; } 50% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1) translateY(100%); opacity: 0; } }
@@ -89,7 +92,7 @@ p { color: var(--text-secondary); font-weight: 300; }
 .letter-body p:last-child { margin-bottom: 0; }
 
 /* ========================================
-   MEMORIES SECTION (With Editorial Zoom)
+   MEMORIES SECTION
    ======================================== */
 .memories-container { max-width: var(--max-container-width); margin: 0 auto; display: flex; flex-direction: column; gap: 15vh; }
 .memory-block { display: flex; flex-direction: column; gap: 24px; }
@@ -102,7 +105,6 @@ p { color: var(--text-secondary); font-weight: 300; }
     display: block;
     transform: scale(1.08);
     transition: transform 1.5s var(--ease-out-expo);
-    will-change: transform;
 }
 .fade-up-element.is-visible .memory-img { transform: scale(1); }
 
@@ -135,7 +137,6 @@ p { color: var(--text-secondary); font-weight: 300; }
     transform: translateY(30px);
     transition: opacity var(--transition-duration) var(--ease-out-expo),
                 transform var(--transition-duration) var(--ease-out-expo);
-    will-change: opacity, transform;
 }
 .fade-up-element.is-visible { opacity: 1; transform: translateY(0); }
 
