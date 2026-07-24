@@ -13,7 +13,7 @@
     --font-body: 'Inter', sans-serif;
 
     --max-reading-width: 520px;
-    --max-container-width: 800px;
+    --max-container-width: 900px;
 
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --transition-duration: 800ms;
@@ -62,7 +62,7 @@ p { color: var(--text-secondary); font-weight: 300; }
    1. HERO SECTION
    ======================================== */
 .hero {
-    height: 100vh;
+    height: 100svh; /* svh prevents mobile browser UI jumps */
     min-height: 600px;
     display: flex;
     flex-direction: column;
@@ -133,6 +133,17 @@ p { color: var(--text-secondary); font-weight: 300; }
 .fade-up-element.is-visible .memory-img { transform: scale(1); }
 
 .memory-content { max-width: var(--max-reading-width); }
+
+.memory-meta {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
 .memory-title { font-size: 1.5rem; margin-bottom: 0.75rem; }
 .memory-text { font-size: 0.9375rem; line-height: 1.7; }
 
@@ -161,6 +172,7 @@ p { color: var(--text-secondary); font-weight: 300; }
     transform: translateY(30px);
     transition: opacity var(--transition-duration) var(--ease-out-expo),
                 transform var(--transition-duration) var(--ease-out-expo);
+    will-change: opacity, transform;
 }
 .fade-up-element.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -170,12 +182,20 @@ p { color: var(--text-secondary); font-weight: 300; }
 }
 
 /* ========================================
-   DESKTOP MEDIA QUERIES
+   DESKTOP MEDIA QUERIES (The Luxury Layout)
    ======================================== */
 @media (min-width: 768px) {
     .section-padding { padding: 15vh 48px; }
-    .memory-block { flex-direction: row; align-items: center; gap: 48px; }
+
+    /* Asymmetrical Luxury Layout */
+    .memory-block { 
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between; 
+        gap: 60px; 
+    }
     .memory-block.reverse { flex-direction: row-reverse; }
-    .memory-figure { flex: 1; max-width: 50%; }
-    .memory-content { flex: 1; padding: 24px; }
+
+    .memory-figure { flex: 0 0 45%; max-width: 45%; }
+    .memory-content { flex: 0 0 45%; padding: 0; }
 }
