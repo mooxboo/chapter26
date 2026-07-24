@@ -134,14 +134,24 @@ p { color: var(--text-secondary); font-weight: 300; }
 
 .memory-content { max-width: var(--max-reading-width); }
 
+/* The Luxury Eyebrow Line */
 .memory-meta {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-family: var(--font-body);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--accent-color);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+.memory-meta::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color: var(--accent-color);
 }
 
 .memory-title { font-size: 1.5rem; margin-bottom: 0.75rem; }
@@ -150,11 +160,45 @@ p { color: var(--text-secondary); font-weight: 300; }
 /* ========================================
    5. THINGS I LOVE ABOUT YOU SECTION
    ======================================== */
-.reasons-list { display: flex; flex-direction: column; gap: 3rem; }
-.reason-item { display: flex; gap: 1.5rem; align-items: flex-start; }
-.reason-number { font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent-color); font-style: italic; min-width: 40px; }
-.reason-title { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary); }
-.reason-text { font-size: 0.9375rem; line-height: 1.6; }
+.reasons-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0; 
+}
+
+.reason-item { 
+    display: flex; 
+    gap: 2rem; 
+    align-items: flex-start; 
+    padding: 3rem 0; 
+    border-top: 1px solid var(--divider-color); 
+}
+
+.reason-item:last-child {
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.reason-number { 
+    font-family: var(--font-heading); 
+    font-size: 2.5rem; 
+    line-height: 1;
+    color: var(--accent-color); 
+    font-style: italic; 
+    min-width: 50px; 
+    margin-top: -0.25rem; 
+}
+
+.reason-title { 
+    font-size: 1.35rem; 
+    margin-bottom: 0.75rem; 
+    color: var(--text-primary); 
+    letter-spacing: 0.02em;
+}
+
+.reason-text { 
+    font-size: 0.9375rem; 
+    line-height: 1.7; 
+}
 
 /* ========================================
    6. BIRTHDAY WISH & 7. ENDING
@@ -187,12 +231,12 @@ p { color: var(--text-secondary); font-weight: 300; }
 @media (min-width: 768px) {
     .section-padding { padding: 15vh 48px; }
 
-    /* Asymmetrical Luxury Layout */
+    /* Asymmetrical Luxury Layout with Fluid Spacing */
     .memory-block { 
         flex-direction: row; 
         align-items: center; 
         justify-content: space-between; 
-        gap: 60px; 
+        gap: 8vw; 
     }
     .memory-block.reverse { flex-direction: row-reverse; }
 
